@@ -8,3 +8,12 @@ newTaskAdd.addEventListener('click', function() {
     tasksList.append(listItem);
     newTaskInput.value = '';
 });
+
+newTaskInput.addEventListener('keyup', function(e) {
+    if (e.key == 'Enter') {
+        let listItem = document.createElement('li');
+        listItem.textContent = newTaskInput.value;
+        tasksList.append(listItem);
+        newTaskInput.value = ''; 
+    }
+});
