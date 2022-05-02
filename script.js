@@ -1,6 +1,7 @@
 let newTaskInput = document.querySelector("#new-task-input");
 let newTaskAdd = document.querySelector("#new-task-add");
 let tasksList = document.querySelector("#tasks-list");
+let newTaskForm = document.querySelector('#new-task-form');
 
 function addTask() {
     let listItem = document.createElement('li');
@@ -9,12 +10,7 @@ function addTask() {
     newTaskInput.value = '';
 }
 
-newTaskAdd.addEventListener('click', function() {    
+newTaskForm.addEventListener('submit', function(e) {    
+    e.preventDefault();
     addTask();
-});
-
-newTaskInput.addEventListener('keyup', function(e) {
-    if (e.key == 'Enter') {
-        addTask();
-    }
 });
