@@ -6,4 +6,5 @@ newTaskAdd.addEventListener('click', function() {
     let listItem = document.createElement('li');
     listItem.textContent = newTaskInput.value;
     tasksList.append(listItem);
+    newTaskInput.value = '';
 });
