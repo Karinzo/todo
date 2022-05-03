@@ -8,9 +8,19 @@ function addTask() {
     listItem.textContent = newTaskInput.value;
     tasksList.append(listItem);
     newTaskInput.value = '';
+    newTaskAdd.disabled = true;
 }
 
 newTaskForm.addEventListener('submit', function(e) {    
     e.preventDefault();
     addTask();
 });
+
+newTaskInput.addEventListener('input', function() {
+    if (newTaskInput.value == '') {
+        newTaskAdd.disabled = true;
+    } else {
+        newTaskAdd.disabled = false;
+    }
+});
+ 
